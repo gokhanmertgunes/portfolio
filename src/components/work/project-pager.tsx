@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useLocale } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/content/projects";
@@ -14,6 +15,7 @@ export function ProjectPager({
   prev: Project | null;
   next: Project | null;
 }) {
+  const locale = useLocale();
   const reduceMotion = useReducedMotion();
 
   if (!prev && !next) return null;
@@ -30,7 +32,7 @@ export function ProjectPager({
       <div>
         {prev ? (
           <Button asChild variant="outline" className="h-11 rounded-xl px-4">
-            <Link href={`/projects/${prev.slug}`}>
+            <Link href={`/${locale}/projects/${prev.slug}`}>
               <ArrowLeft className="mr-2 size-4" />
               {prev.title}
             </Link>
@@ -43,7 +45,7 @@ export function ProjectPager({
       <div>
         {next ? (
           <Button asChild variant="outline" className="h-11 rounded-xl px-4">
-            <Link href={`/projects/${next.slug}`}>
+            <Link href={`/${locale}/projects/${next.slug}`}>
               {next.title}
               <ArrowRight className="ml-2 size-4" />
             </Link>
