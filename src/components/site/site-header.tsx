@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
+import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
 
 function NavLink({
@@ -30,6 +34,7 @@ function NavLink({
 }
 
 export function SiteHeader() {
+  const t = useTranslations();
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container className="flex h-16 items-center justify-between">
@@ -38,20 +43,29 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-1 md:flex">
             {siteConfig.nav.map((item) => (
               <NavLink key={item.href} href={item.href}>
-                {item.label}
+                {t(
+                  item.href === "#projects"
+                    ? "nav.projects"
+                    : item.href === "#experience"
+                      ? "nav.experience"
+                      : item.href === "#about"
+                        ? "nav.about"
+                        : "nav.writing"
+                )}
               </NavLink>
             ))}
           </nav>
         </div>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
           <Button asChild variant="ghost" className="hidden sm:inline-flex">
             <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-              GitHub
+              {t("header.github")}
             </Link>
           </Button>
           <Button asChild className="h-9 rounded-xl px-4">
-            <Link href={siteConfig.links.email}>Let’s Talk</Link>
+            <Link href={siteConfig.links.email}>{t("header.cta")}</Link>
           </Button>
         </div>
       </Container>

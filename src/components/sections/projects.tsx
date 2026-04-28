@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { projects } from "@/content/projects";
 import { ProjectCard } from "@/components/work/project-card";
@@ -8,6 +9,7 @@ import { Container } from "@/components/site/container";
 import { SectionHeading } from "@/components/site/section-heading";
 
 export function ProjectsSection() {
+  const t = useTranslations();
   const reduceMotion = useReducedMotion();
 
   const featured = projects[0];
@@ -18,9 +20,9 @@ export function ProjectsSection() {
       <Container className="py-16 sm:py-20">
         <div className="flex flex-col gap-10">
           <SectionHeading
-            eyebrow="Projects"
-            title="Projects"
-            description="A curated selection of shipped work, systems projects, and security-focused practice."
+            eyebrow={t("sections.projects.eyebrow")}
+            title={t("sections.projects.title")}
+            description={t("sections.projects.desc")}
           />
 
           <motion.div

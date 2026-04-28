@@ -1,13 +1,16 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useLocale } from "next-intl";
 
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
 
 export function ProjectMetrics({ project }: { project: Project }) {
   const reduceMotion = useReducedMotion();
-  const metrics = project.metrics ?? [];
+  const locale = useLocale();
+  const metrics =
+    locale === "tr" && project.metricsTr?.length ? project.metricsTr : project.metrics ?? [];
   if (!metrics.length) return null;
 
   return (

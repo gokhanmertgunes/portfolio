@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
@@ -60,21 +61,33 @@ export function ProjectNotes({
 }
 
 export function ProjectDecisions({ project }: { project: Project }) {
+  const t = useTranslations();
+  const locale = useLocale();
   return (
     <ProjectNotes
-      eyebrow="Decisions"
-      title="Decisions & trade-offs"
-      items={project.decisions ?? []}
+      eyebrow={t("caseStudy.decisions.eyebrow")}
+      title={t("caseStudy.decisions.title")}
+      items={
+        locale === "tr" && project.decisionsTr?.length
+          ? project.decisionsTr
+          : project.decisions ?? []
+      }
     />
   );
 }
 
 export function ProjectArchitecture({ project }: { project: Project }) {
+  const t = useTranslations();
+  const locale = useLocale();
   return (
     <ProjectNotes
-      eyebrow="Architecture"
-      title="System design"
-      items={project.architecture ?? []}
+      eyebrow={t("caseStudy.architecture.eyebrow")}
+      title={t("caseStudy.architecture.title")}
+      items={
+        locale === "tr" && project.architectureTr?.length
+          ? project.architectureTr
+          : project.architecture ?? []
+      }
     />
   );
 }

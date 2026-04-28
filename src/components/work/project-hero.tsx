@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, FolderGit2 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 import type { Project } from "@/content/projects";
 import { Button } from "@/components/ui/button";
@@ -17,7 +19,12 @@ function Tag({ children }: { children: React.ReactNode }) {
 }
 
 export function ProjectHero({ project }: { project: Project }) {
+  const t = useTranslations();
+  const locale = useLocale();
   const reduceMotion = useReducedMotion();
+  const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+  const description =
+    locale === "tr" && project.descriptionTr ? project.descriptionTr : project.description;
 
   return (
     <section className="relative overflow-hidden border-b border-border/60">
@@ -35,7 +42,7 @@ export function ProjectHero({ project }: { project: Project }) {
           layoutId={`project-card-${project.slug}`}
           initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease }}
           className="max-w-3xl"
         >
           <div className="flex flex-wrap items-center gap-3">
@@ -60,25 +67,25 @@ export function ProjectHero({ project }: { project: Project }) {
             {project.title}
           </motion.h1>
           <p className="mt-4 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-            {project.description}
+            {description}
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button asChild className="h-11 rounded-xl px-6">
-              <Link href="/#projects">Back to projects</Link>
+              <Link href={`/${locale}/#projects`}>{t("projects.backToProjects")}</Link>
             </Button>
             <div className="flex items-center gap-2">
               {project.links?.live ? (
                 <Button asChild variant="outline" className="h-11 rounded-xl px-5">
                   <Link href={project.links.live} target="_blank" rel="noreferrer">
-                    Live <ArrowUpRight className="ml-2 size-4" />
+                    {t("projects.live")} <ArrowUpRight className="ml-2 size-4" />
                   </Link>
                 </Button>
               ) : null}
               {project.links?.source ? (
                 <Button asChild variant="outline" className="h-11 rounded-xl px-5">
                   <Link href={project.links.source} target="_blank" rel="noreferrer">
-                    Source <FolderGit2 className="ml-2 size-4" />
+                    {t("projects.source")} <FolderGit2 className="ml-2 size-4" />
                   </Link>
                 </Button>
               ) : null}

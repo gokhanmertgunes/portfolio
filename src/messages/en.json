@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "about": "About",
+    "writing": "Writing"
+  },
+  "header": {
+    "github": "GitHub",
+    "cta": "Let’s Talk",
+    "lang": {
+      "en": "EN",
+      "tr": "TR"
+    }
+  },
+  "hero": {
+    "pill": "Open to selective freelance and full-time opportunities",
+    "titleBefore": "Engineering",
+    "titleHighlight1": "scalable products",
+    "titleMiddle": "through clean architecture, modern interfaces, and",
+    "titleHighlight2": "secure systems",
+    "titleAfter": ".",
+    "subtitle": "I build full-stack applications that combine thoughtful user experiences with strong backend engineering. Focused on performance, architecture, and product-driven problem solving, with growing depth in security and intelligent systems.",
+    "ctaPrimary": "Let’s Talk",
+    "ctaSecondary": "View Projects",
+    "chips": {
+      "c1": "Full-stack product engineering",
+      "c2": "Backend-first architecture",
+      "c3": "Security mindset"
+    }
+  },
+  "sections": {
+    "projects": {
+      "eyebrow": "Projects",
+      "title": "Projects",
+      "desc": "A curated selection of shipped work, systems projects, and security-focused practice."
+    },
+    "experience": {
+      "eyebrow": "Experience",
+      "title": "Experience",
+      "desc": "Industry experience across backend systems, distributed workflows, and product-focused engineering."
+    },
+    "about": {
+      "title": "About",
+      "desc": "I’m a software engineer focused on building reliable software end-to-end — from polished frontend experiences to scalable backend systems. I enjoy solving engineering problems where architecture, performance and usability intersect, and I’m especially interested in backend systems, cybersecurity, and intelligent software."
+    },
+    "writing": {
+      "title": "Writing",
+      "desc": "Coming soon."
+    }
+  },
+  "projects": {
+    "readCaseStudy": "Read case study",
+    "backToProjects": "Back to projects",
+    "live": "Live",
+    "source": "Source"
+  },
+  "footer": {
+    "email": "Email",
+    "linkedin": "LinkedIn"
+  },
+  "caseStudy": {
+    "overview": {
+      "eyebrow": "Overview",
+      "title": "What I built",
+      "desc": "Clear hierarchy, premium spacing, and room for evidence—optimized for skimming and depth.",
+      "body": "This page is intentionally structured like a SaaS-grade case study: clear hierarchy, readable typography, and room for proof."
+    },
+    "highlights": "Highlights",
+    "details": {
+      "title": "Details",
+      "timeframe": "Timeframe",
+      "stack": "Stack"
+    },
+    "decisions": {
+      "eyebrow": "Decisions",
+      "title": "Decisions & trade-offs"
+    },
+    "architecture": {
+      "eyebrow": "Architecture",
+      "title": "System design"
+    }
+  }
+}
+

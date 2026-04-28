@@ -2,22 +2,27 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 import { experience } from "@/content/experience";
 import { Container } from "@/components/site/container";
 import { SectionHeading } from "@/components/site/section-heading";
 
 export function ExperienceSection() {
+  const t = useTranslations();
+  const locale = useLocale();
   const reduceMotion = useReducedMotion();
+  const isTr = locale === "tr";
 
   return (
     <section id="experience" className="border-t border-border/60">
       <Container className="py-16 sm:py-20">
         <div className="flex flex-col gap-10">
           <SectionHeading
-            eyebrow="Experience"
-            title="Experience"
-            description="Industry experience across backend systems, distributed workflows, and product-focused engineering."
+            eyebrow={t("sections.experience.eyebrow")}
+            title={t("sections.experience.title")}
+            description={t("sections.experience.desc")}
           />
 
           <div className="grid gap-4">
@@ -53,17 +58,17 @@ export function ExperienceSection() {
                       </div>
                     </div>
                     <div className="mt-1 text-sm text-muted-foreground">
-                      {item.role}
+                      {isTr && item.roleTr ? item.roleTr : item.role}
                     </div>
                   </div>
                   <div className="text-sm text-muted-foreground sm:text-right">
                     <div className="font-medium text-foreground/90">{item.period}</div>
-                    <div>{item.location}</div>
+                    <div>{isTr && item.locationTr ? item.locationTr : item.location}</div>
                   </div>
                 </div>
 
                 <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-                  {item.bullets.map((b) => (
+                  {(isTr && item.bulletsTr ? item.bulletsTr : item.bullets).map((b) => (
                     <li key={b} className="flex gap-2">
                       <span className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground/40" />
                       <span>{b}</span>

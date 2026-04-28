@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
@@ -9,9 +12,11 @@ export function Logo({
   className?: string;
   href?: string;
 }) {
+  const locale = useLocale();
+  const resolvedHref = href === "/" ? `/${locale}` : href;
   return (
     <Link
-      href={href}
+      href={resolvedHref}
       className={cn(
         "group inline-flex items-center gap-2 rounded-xl px-2 py-1 text-sm font-semibold tracking-tight text-foreground hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
         className

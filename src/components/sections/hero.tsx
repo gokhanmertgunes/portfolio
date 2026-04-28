@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
@@ -44,6 +45,7 @@ function Pill({ children }: { children: React.ReactNode }) {
 }
 
 export function Hero() {
+  const t = useTranslations();
   const reduceMotion = useReducedMotion();
   const linkedInAvatar =
     "https://media.licdn.com/dms/image/v2/D4D03AQGFAL11VCQzkQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1666783473191?e=1778716800&v=beta&t=LIW3Yo5DSaWx88yYQ1cSfW7xWtnc1dAvIUTr4rukT8Q";
@@ -90,7 +92,7 @@ export function Hero() {
                 />
               </div>
             </div>
-            <Pill>Open to selective freelance and full-time opportunities</Pill>
+            <Pill>{t("hero.pill")}</Pill>
           </motion.div>
 
           <motion.h1
@@ -101,17 +103,17 @@ export function Hero() {
               "leading-[1.02]"
             )}
           >
-            Engineering{" "}
+            {t("hero.titleBefore")}{" "}
             <span className="relative mx-1.5 inline-block">
               <span className="absolute inset-x-0 -bottom-1 h-3 rounded-full bg-foreground/10 blur-[2px]" />
-              <span className="relative">scalable products</span>
+              <span className="relative">{t("hero.titleHighlight1")}</span>
             </span>
-            through clean architecture, modern interfaces, and{" "}
+            {t("hero.titleMiddle")}{" "}
             <span className="relative mx-1.5 inline-block">
               <span className="absolute inset-x-0 -bottom-1 h-3 rounded-full bg-foreground/10 blur-[2px]" />
-              <span className="relative">secure systems</span>
+              <span className="relative">{t("hero.titleHighlight2")}</span>
             </span>
-            .
+            {t("hero.titleAfter")}
           </motion.h1>
 
           <motion.p
@@ -119,10 +121,7 @@ export function Hero() {
             custom={0.18}
             className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
           >
-            I build full-stack applications that combine thoughtful user experiences
-            with strong backend engineering. Focused on performance, architecture,
-            and product-driven problem solving, with growing depth in security and
-            intelligent systems.
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.div
@@ -131,10 +130,10 @@ export function Hero() {
             className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <Button asChild className="h-11 rounded-xl px-6">
-              <Link href={siteConfig.links.email}>Let’s Talk</Link>
+              <Link href={siteConfig.links.email}>{t("hero.ctaPrimary")}</Link>
             </Button>
             <Button asChild variant="outline" className="h-11 rounded-xl px-6">
-              <Link href="#projects">View Projects</Link>
+              <Link href="#projects">{t("hero.ctaSecondary")}</Link>
             </Button>
           </motion.div>
 
@@ -144,13 +143,13 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
           >
             <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1">
-              Full-stack product engineering
+              {t("hero.chips.c1")}
             </span>
             <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1">
-              Backend-first architecture
+              {t("hero.chips.c2")}
             </span>
             <span className="rounded-full border border-border/70 bg-background/60 px-3 py-1">
-              Security mindset
+              {t("hero.chips.c3")}
             </span>
           </motion.div>
         </motion.div>

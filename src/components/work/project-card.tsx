@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, FolderGit2 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 import type { Project } from "@/content/projects";
 import { Button } from "@/components/ui/button";
@@ -25,7 +27,13 @@ export function ProjectCard({
   index: number;
   featured?: boolean;
 }) {
+  const t = useTranslations();
+  const locale = useLocale();
   const reduceMotion = useReducedMotion();
+  const isTr = locale === "tr";
+  const description = isTr && project.descriptionTr ? project.descriptionTr : project.description;
+  const highlights =
+    isTr && project.highlightsTr ? project.highlightsTr : project.highlights;
 
   return (
     <motion.article
@@ -44,7 +52,7 @@ export function ProjectCard({
       )}
     >
       <Link
-        href={`/projects/${project.slug}`}
+        href={`/${locale}/projects/${project.slug}`}
         className="absolute inset-0 z-10 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
         aria-label={`Open case study: ${project.title}`}
       />
@@ -109,7 +117,7 @@ export function ProjectCard({
         </div>
 
         <p className="mt-3 text-sm leading-6 text-muted-foreground">
-          {project.description}
+          {description}
         </p>
 
         <div className={cn("flex flex-wrap gap-2", featured ? "mt-6" : "mt-5")}>
@@ -118,9 +126,9 @@ export function ProjectCard({
           ))}
         </div>
 
-        {project.highlights?.length ? (
+        {highlights?.length ? (
           <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-            {project.highlights.slice(0, 3).map((h) => (
+            {highlights.slice(0, 3).map((h) => (
               <li key={h} className="flex gap-2">
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground/40" />
                 <span>{h}</span>
@@ -135,8 +143,8 @@ export function ProjectCard({
             variant="secondary"
             className="relative z-20 h-9 rounded-xl px-4"
           >
-            <Link href={`/projects/${project.slug}`}>
-              Read case study <ArrowRight className="ml-2 size-4" />
+            <Link href={`/${locale}/projects/${project.slug}`}>
+              {t("projects.readCaseStudy")} <ArrowRight className="ml-2 size-4" />
             </Link>
           </Button>
         </div>

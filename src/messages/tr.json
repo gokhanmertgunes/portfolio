@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "projects": "Projeler",
+    "experience": "Deneyim",
+    "about": "Hakkımda",
+    "writing": "Yazılar"
+  },
+  "header": {
+    "github": "GitHub",
+    "cta": "İletişime geç",
+    "lang": {
+      "en": "EN",
+      "tr": "TR"
+    }
+  },
+  "hero": {
+    "pill": "Seçili freelance ve full-time fırsatlara açığım",
+    "titleBefore": "Temiz mimari, modern arayüzler ve",
+    "titleHighlight1": "ölçeklenebilir ürünler",
+    "titleMiddle": "ile",
+    "titleHighlight2": "güvenli sistemler",
+    "titleAfter": "geliştiriyorum.",
+    "subtitle": "Düşünülmüş kullanıcı deneyimini güçlü backend mühendisliğiyle birleştiren full‑stack uygulamalar geliştiriyorum. Performans, mimari ve ürün odaklı problem çözmeye odaklanıyorum; güvenlik ve akıllı sistemlerde derinliğimi sürekli artırıyorum.",
+    "ctaPrimary": "İletişime geç",
+    "ctaSecondary": "Projeleri gör",
+    "chips": {
+      "c1": "Full‑stack ürün geliştirme",
+      "c2": "Backend‑odaklı mimari",
+      "c3": "Güvenlik odağı"
+    }
+  },
+  "sections": {
+    "projects": {
+      "eyebrow": "Projeler",
+      "title": "Projeler",
+      "desc": "Yayınlanmış işler, sistem projeleri ve güvenlik odaklı çalışmaların seçili bir listesi."
+    },
+    "experience": {
+      "eyebrow": "Deneyim",
+      "title": "Deneyim",
+      "desc": "Backend sistemleri, dağıtık akışlar ve ürün odaklı mühendislik üzerine endüstri deneyimi."
+    },
+    "about": {
+      "title": "Hakkımda",
+      "desc": "Uçtan uca güvenilir yazılımlar geliştirmeye odaklanan bir yazılım mühendisiyim — cilalı frontend deneyimlerinden ölçeklenebilir backend sistemlerine kadar. Mimari, performans ve kullanılabilirliğin kesiştiği problemleri çözmeyi seviyorum; özellikle backend sistemleri, siber güvenlik ve akıllı yazılımlarla ilgileniyorum."
+    },
+    "writing": {
+      "title": "Yazılar",
+      "desc": "Yakında."
+    }
+  },
+  "projects": {
+    "readCaseStudy": "Case study oku",
+    "backToProjects": "Projelere dön",
+    "live": "Canlı",
+    "source": "Kaynak"
+  },
+  "footer": {
+    "email": "E-posta",
+    "linkedin": "LinkedIn"
+  },
+  "caseStudy": {
+    "overview": {
+      "eyebrow": "Genel Bakış",
+      "title": "Ne geliştirdim?",
+      "desc": "Net hiyerarşi, premium boşluklar ve kanıt alanı—hızlı tarama ve derin okuma için optimize.",
+      "body": "Bu sayfa, SaaS seviyesinde bir case study formatında tasarlandı: net hiyerarşi, okunabilir tipografi ve kanıt sunmak için alan."
+    },
+    "highlights": "Öne çıkanlar",
+    "details": {
+      "title": "Detaylar",
+      "timeframe": "Zaman",
+      "stack": "Teknoloji"
+    },
+    "decisions": {
+      "eyebrow": "Kararlar",
+      "title": "Kararlar ve trade‑off’lar"
+    },
+    "architecture": {
+      "eyebrow": "Mimari",
+      "title": "Sistem tasarımı"
+    }
+  }
+}
+
