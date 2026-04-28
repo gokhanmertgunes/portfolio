@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, LayoutGroup, MotionConfig, motion, useReducedMotion } from "framer-motion";
+import { LayoutGroup, MotionConfig, motion, useReducedMotion } from "framer-motion";
 
 export function AppMotion({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -12,19 +12,14 @@ export function AppMotion({ children }: { children: React.ReactNode }) {
   return (
     <MotionConfig reducedMotion={reduceMotion ? "always" : "never"}>
       <LayoutGroup id="app">
-        <AnimatePresence mode="sync" initial={false}>
-          <motion.div
-            key={pathname}
-            // Avoid a "blank" frame during route transitions
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            // Don't fade out old content; let the new route replace it when ready
-            exit={{ opacity: 1, y: 0 }}
-            transition={{ duration: reduceMotion ? 0 : 0.22, ease }}
-          >
-            {children}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reduceMotion ? 0 : 0.22, ease }}
+        >
+          {children}
+        </motion.div>
       </LayoutGroup>
     </MotionConfig>
   );
