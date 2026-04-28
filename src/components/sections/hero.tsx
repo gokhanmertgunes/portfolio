@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
@@ -48,14 +48,15 @@ export function Hero() {
   const linkedInAvatar =
     "https://media.licdn.com/dms/image/v2/D4D03AQGFAL11VCQzkQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1666783473191?e=1778716800&v=beta&t=LIW3Yo5DSaWx88yYQ1cSfW7xWtnc1dAvIUTr4rukT8Q";
 
-  const fadeUp = {
+  const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: reduceMotion ? 0 : 14 },
     visible: (delay = 0) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay },
+      transition: { duration: 0.7, ease, delay },
     }),
-  } as const;
+  };
 
   return (
     <section className="relative overflow-hidden">
