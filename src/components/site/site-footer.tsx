@@ -16,7 +16,7 @@ export function SiteFooter() {
           <div className="text-sm font-semibold tracking-tight">
             {siteConfig.name}
           </div>
-          <p className="text-sm text-muted-foreground">{siteConfig.description}</p>
+          <p className="text-sm text-muted-foreground">{t("footer.desc")}</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
