@@ -62,7 +62,9 @@ export function ExperienceSection() {
                     </div>
                   </div>
                   <div className="text-sm text-muted-foreground sm:text-right">
-                    <div className="font-medium text-foreground/90">{item.period}</div>
+                    <div className="font-medium text-foreground/90">
+                      {isTr && item.periodTr ? item.periodTr : item.period}
+                    </div>
                     <div>{isTr && item.locationTr ? item.locationTr : item.location}</div>
                   </div>
                 </div>

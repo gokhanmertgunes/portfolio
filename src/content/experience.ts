@@ -6,6 +6,7 @@ export type ExperienceItem = {
   location: string;
   locationTr?: string;
   period: string;
+  periodTr?: string;
   bullets: readonly string[];
   bulletsTr?: readonly string[];
 };
@@ -18,6 +19,7 @@ export const experience: readonly ExperienceItem[] = [
     role: "Software Developer",
     roleTr: "Yazılım Geliştirici",
     period: "September 2023 – July 2024",
+    periodTr: "Eylül 2023 – Temmuz 2024",
     location: "Ankara, Turkey",
     locationTr: "Ankara, Türkiye",
     bullets: [
@@ -46,6 +48,7 @@ export const experience: readonly ExperienceItem[] = [
     role: "Platform Applications Intern",
     roleTr: "Platform Uygulamaları Stajyeri",
     period: "August 2023",
+    periodTr: "Ağustos 2023",
     location: "Istanbul, Turkey",
     locationTr: "İstanbul, Türkiye",
     bullets: [
@@ -65,6 +68,7 @@ export const experience: readonly ExperienceItem[] = [
     role: "Software Engineering Intern",
     roleTr: "Yazılım Mühendisliği Stajyeri",
     period: "July 2023",
+    periodTr: "Temmuz 2023",
     location: "Ankara, Turkey",
     locationTr: "Ankara, Türkiye",
     bullets: [
@@ -82,6 +86,7 @@ export const experience: readonly ExperienceItem[] = [
     role: "Teaching Assistant Tutor",
     roleTr: "Öğretim Asistanı / Tutor",
     period: "September 2022 – June 2023",
+    periodTr: "Eylül 2022 – Haziran 2023",
     location: "Ankara, Turkey",
     locationTr: "Ankara, Türkiye",
     bullets: [
@@ -99,6 +104,7 @@ export const experience: readonly ExperienceItem[] = [
     role: "Student Representative (Faculty of Applied Sciences)",
     roleTr: "Öğrenci Temsilcisi (Uygulamalı Bilimler Fakültesi)",
     period: "September 2023 – June 2025",
+    periodTr: "Eylül 2023 – Haziran 2025",
     location: "Ankara, Turkey",
     locationTr: "Ankara, Türkiye",
     bullets: [
